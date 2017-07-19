@@ -8,8 +8,8 @@ class NewEventForm extends Component {
     super();
     this.state = {
       title: '',
-      start: '',
-      duration: ''
+      start: '0',
+      duration: '0'
     };
     this.add = this.add.bind(this);
     this.handleChange = this.handleChange.bind(this);
