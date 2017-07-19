@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import Event from './Event';
 import Grid from './Grid';
+import NewEventForm from './NewEventForm';
 
 import { addOffSet } from '../fixtures';
 
@@ -14,6 +17,7 @@ class Calendar extends Component {
     ))
     return (
       <div className="calendar">
+        <NewEventForm />
         <Grid />
         <ul className="events">
           {events}
@@ -23,4 +27,6 @@ class Calendar extends Component {
   }
 }
 
-export default Calendar;
+export default connect(
+  state => ({events: state.events})
+)(Calendar);
